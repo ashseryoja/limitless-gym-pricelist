@@ -5,3 +5,5 @@ dist
 .claude
 *.html.bak
 Limitless Gym*.html
+.vercel
+.env*
