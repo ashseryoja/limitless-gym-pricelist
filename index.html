@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Limitless Gym — Price list</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Montserrat:wght@500;700;800&family=Noto+Sans+Armenian:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #121212;
+  --ink: #FFFFFF;
+  --soft: #B5B0AE;
+  --red: #E8553A;
+  --box: rgba(110, 38, 26, .55);
+  --dots: rgba(255,255,255,.55);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #121212; --ink: #FFFFFF; }
+}
+:root[data-theme="dark"] { --bg: #121212; --ink: #FFFFFF; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Montserrat", "Noto Sans Armenian", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+.bolt {
+  position: fixed;
+  right: -60px;
+  top: 30%;
+  width: 260px;
+  opacity: .07;
+  pointer-events: none;
+  z-index: 0;
+}
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 18px 48px;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.05;
+  letter-spacing: .02em;
+}
+.logo b { color: var(--red); }
+.langs {
+  display: flex;
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.langs button {
+  font: inherit;
+  font-size: 13px;
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+.langs button[aria-pressed="true"] { background: var(--red); }
+.langs button:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }
+h1 {
+  font-family: "Rubik Dirt", "Impact", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 900;
+  font-weight: 400;
+  font-size: clamp(54px, 18vw, 96px);
+  line-height: .95;
+  margin: 28px 0 8px;
+  letter-spacing: .01em;
+}
+h1 .p { color: var(--red); }
+.daily {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 18px 0 6px;
+  font-size: 16px;
+}
+h2 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 36px 0 12px;
+}
+h2.big { font-size: 22px; margin-top: 52px; color: var(--red); }
+.box {
+  border: 2px solid var(--red);
+  background: var(--box);
+  padding: 6px 14px;
+}
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 11px 0;
+}
+.row + .row { border-top: 1px solid rgba(255,255,255,.07); }
+.name { flex: 0 1 auto; }
+.name small {
+  display: block;
+  font-weight: 500;
+  color: var(--soft);
+  font-size: 13px;
+}
+.lead {
+  flex: 1 1 16px;
+  min-width: 16px;
+  border-bottom: 2px dotted var(--dots);
+  transform: translateY(-4px);
+}
+.price {
+  flex: 0 0 auto;
+  font-weight: 800;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.two .price { width: 84px; text-align: right; }
+.head {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 0 2px;
+  font-size: 12px;
+  color: var(--soft);
+}
+.head span { width: 84px; text-align: right; }
+.head span:last-child { color: var(--red); }
+footer {
+  margin-top: 44px;
+  color: var(--soft);
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+}
+@media (max-width: 380px) {
+  .two .price, .head span { width: 74px; }
+  .price { font-size: 15px; }
+}
+
+.lang { display: none; }
+#ru { display: block; }
+body:has(#hy:target) #ru, body:has(#en:target) #ru { display: none; }
+#hy:target, #en:target { display: block; }
+html[data-lang] .lang { display: none !important; }
+html[data-lang="hy"] #hy, html[data-lang="ru"] #ru, html[data-lang="en"] #en { display: block !important; }
+.langs a { font-size: 13px; color: var(--ink); text-decoration: none; padding: 7px 11px; }
+.langs a[aria-current="true"] { background: var(--red); }
+.langs a:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }
+</style>
+</head>
+<body>
+<svg class="bolt" viewBox="0 0 100 160" aria-hidden="true"><path fill="#fff" d="M0 0h100L62 70h30L18 160l22-70H8z"/></svg>
+<main>
+  <div class="top">
+    <div class="logo">LIMIT<b>/</b>LESS<br>GYM</div>
+    <nav class="langs" aria-label="Language">
+      <a href="#hy" data-l="hy">ՀՅ</a><a href="#ru" data-l="ru" aria-current="true">RU</a><a href="#en" data-l="en">EN</a>
+    </nav>
+  </div>
+  <h1><span class="p">PRICE</span> LIST</h1>
+  <section class="lang" id="ru" lang="ru">
+<div class="daily"><span class="name">Разовое посещение</span><span class="lead"></span><span class="price">3,000֏</span></div>
+<h2>Месячный абонемент</h2>
+<div class="box"><div class="head"><span>07:30–16:00</span><span>Весь день</span></div><div class="row two"><span class="name">8 визитов</span><span class="lead"></span><span class="price">17,000֏</span><span class="price">19,000֏</span></div><div class="row two"><span class="name">10 визитов</span><span class="lead"></span><span class="price">20,000֏</span><span class="price">22,000֏</span></div><div class="row two"><span class="name">12 визитов</span><span class="lead"></span><span class="price">23,000֏</span><span class="price">25,000֏</span></div><div class="row two"><span class="name">15 визитов</span><span class="lead"></span><span class="price">25,000֏</span><span class="price">27,000֏</span></div><div class="row two"><span class="name">20 визитов</span><span class="lead"></span><span class="price">30,000֏</span><span class="price">32,000֏</span></div><div class="row two"><span class="name">30 визитов</span><span class="lead"></span><span class="price">35,000֏</span><span class="price">37,000֏</span></div></div>
+<h2>Трёхмесячный абонемент</h2><div class="box"><div class="row"><span class="name">8 визитов</span><span class="lead"></span><span class="price">46,000֏</span></div><div class="row"><span class="name">10 визитов</span><span class="lead"></span><span class="price">56,000֏</span></div><div class="row"><span class="name">12 визитов</span><span class="lead"></span><span class="price">65,000֏</span></div><div class="row"><span class="name">20 визитов</span><span class="lead"></span><span class="price">85,000֏</span></div><div class="row"><span class="name">30 визитов</span><span class="lead"></span><span class="price">100,000֏</span></div></div>
+<h2>Полугодовой абонемент</h2><div class="box"><div class="row"><span class="name">8 визитов</span><span class="lead"></span><span class="price">85,000֏</span></div><div class="row"><span class="name">10 визитов</span><span class="lead"></span><span class="price">100,000֏</span></div><div class="row"><span class="name">12 визитов</span><span class="lead"></span><span class="price">115,000֏</span></div><div class="row"><span class="name">30 визитов</span><span class="lead"></span><span class="price">180,000֏</span></div></div>
+<h2>Годовой абонемент</h2><div class="box"><div class="row"><span class="name">96 визитов<small>8 в месяц</small></span><span class="lead"></span><span class="price">153,000֏</span></div><div class="row"><span class="name">120 визитов<small>10 в месяц</small></span><span class="lead"></span><span class="price">180,000֏</span></div><div class="row"><span class="name">144 визитов<small>12 в месяц</small></span><span class="lead"></span><span class="price">207,000֏</span></div><div class="row"><span class="name">365 визитов<small>30 в месяц</small></span><span class="lead"></span><span class="price">270,000֏</span></div></div>
+<h2 class="big">С тренером</h2>
+<h2>Годовой абонемент</h2><div class="box"><div class="row"><span class="name">96 визитов<small>8 в месяц</small></span><span class="lead"></span><span class="price">297,000֏</span></div><div class="row"><span class="name">120 визитов<small>10 в месяц</small></span><span class="lead"></span><span class="price">348,000֏</span></div><div class="row"><span class="name">144 визитов<small>12 в месяц</small></span><span class="lead"></span><span class="price">399,000֏</span></div></div>
+<h2>PT Boxing</h2><div class="box"><div class="row"><span class="name">8 визитов</span><span class="lead"></span><span class="price">40,000֏</span></div><div class="row"><span class="name">10 визитов</span><span class="lead"></span><span class="price">50,000֏</span></div><div class="row"><span class="name">12 визитов</span><span class="lead"></span><span class="price">60,000֏</span></div></div>
+<h2>Персональная тренировка 1×1</h2><div class="box"><div class="row"><span class="name">8 визитов</span><span class="lead"></span><span class="price">70,000֏</span></div><div class="row"><span class="name">10 визитов</span><span class="lead"></span><span class="price">80,000֏</span></div><div class="row"><span class="name">12 визитов</span><span class="lead"></span><span class="price">90,000֏</span></div></div>
+</section>
+  <section class="lang" id="hy" lang="hy">
+<div class="daily"><span class="name">Մեկանգամյա այց</span><span class="lead"></span><span class="price">3,000֏</span></div>
+<h2>Ամսական փաթեթ</h2>
+<div class="box"><div class="head"><span>07:30–16:00</span><span>Ամբողջ օր</span></div><div class="row two"><span class="name">8 այց</span><span class="lead"></span><span class="price">17,000֏</span><span class="price">19,000֏</span></div><div class="row two"><span class="name">10 այց</span><span class="lead"></span><span class="price">20,000֏</span><span class="price">22,000֏</span></div><div class="row two"><span class="name">12 այց</span><span class="lead"></span><span class="price">23,000֏</span><span class="price">25,000֏</span></div><div class="row two"><span class="name">15 այց</span><span class="lead"></span><span class="price">25,000֏</span><span class="price">27,000֏</span></div><div class="row two"><span class="name">20 այց</span><span class="lead"></span><span class="price">30,000֏</span><span class="price">32,000֏</span></div><div class="row two"><span class="name">30 այց</span><span class="lead"></span><span class="price">35,000֏</span><span class="price">37,000֏</span></div></div>
+<h2>Եռամսյա փաթեթ</h2><div class="box"><div class="row"><span class="name">8 այց</span><span class="lead"></span><span class="price">46,000֏</span></div><div class="row"><span class="name">10 այց</span><span class="lead"></span><span class="price">56,000֏</span></div><div class="row"><span class="name">12 այց</span><span class="lead"></span><span class="price">65,000֏</span></div><div class="row"><span class="name">20 այց</span><span class="lead"></span><span class="price">85,000֏</span></div><div class="row"><span class="name">30 այց</span><span class="lead"></span><span class="price">100,000֏</span></div></div>
+<h2>Վեցամսյա փաթեթ</h2><div class="box"><div class="row"><span class="name">8 այց</span><span class="lead"></span><span class="price">85,000֏</span></div><div class="row"><span class="name">10 այց</span><span class="lead"></span><span class="price">100,000֏</span></div><div class="row"><span class="name">12 այց</span><span class="lead"></span><span class="price">115,000֏</span></div><div class="row"><span class="name">30 այց</span><span class="lead"></span><span class="price">180,000֏</span></div></div>
+<h2>Տարեկան փաթեթ</h2><div class="box"><div class="row"><span class="name">96 այց<small>ամսական 8</small></span><span class="lead"></span><span class="price">153,000֏</span></div><div class="row"><span class="name">120 այց<small>ամսական 10</small></span><span class="lead"></span><span class="price">180,000֏</span></div><div class="row"><span class="name">144 այց<small>ամսական 12</small></span><span class="lead"></span><span class="price">207,000֏</span></div><div class="row"><span class="name">365 այց<small>ամսական 30</small></span><span class="lead"></span><span class="price">270,000֏</span></div></div>
+<h2 class="big">Մարզչի հետ</h2>
+<h2>Տարեկան փաթեթ</h2><div class="box"><div class="row"><span class="name">96 այց<small>ամսական 8</small></span><span class="lead"></span><span class="price">297,000֏</span></div><div class="row"><span class="name">120 այց<small>ամսական 10</small></span><span class="lead"></span><span class="price">348,000֏</span></div><div class="row"><span class="name">144 այց<small>ամսական 12</small></span><span class="lead"></span><span class="price">399,000֏</span></div></div>
+<h2>PT Boxing</h2><div class="box"><div class="row"><span class="name">8 այց</span><span class="lead"></span><span class="price">40,000֏</span></div><div class="row"><span class="name">10 այց</span><span class="lead"></span><span class="price">50,000֏</span></div><div class="row"><span class="name">12 այց</span><span class="lead"></span><span class="price">60,000֏</span></div></div>
+<h2>Personal Training 1×1</h2><div class="box"><div class="row"><span class="name">8 այց</span><span class="lead"></span><span class="price">70,000֏</span></div><div class="row"><span class="name">10 այց</span><span class="lead"></span><span class="price">80,000֏</span></div><div class="row"><span class="name">12 այց</span><span class="lead"></span><span class="price">90,000֏</span></div></div>
+</section>
+  <section class="lang" id="en" lang="en">
+<div class="daily"><span class="name">Daily access</span><span class="lead"></span><span class="price">3,000֏</span></div>
+<h2>Monthly membership</h2>
+<div class="box"><div class="head"><span>07:30–16:00</span><span>Full day</span></div><div class="row two"><span class="name">8 visits</span><span class="lead"></span><span class="price">17,000֏</span><span class="price">19,000֏</span></div><div class="row two"><span class="name">10 visits</span><span class="lead"></span><span class="price">20,000֏</span><span class="price">22,000֏</span></div><div class="row two"><span class="name">12 visits</span><span class="lead"></span><span class="price">23,000֏</span><span class="price">25,000֏</span></div><div class="row two"><span class="name">15 visits</span><span class="lead"></span><span class="price">25,000֏</span><span class="price">27,000֏</span></div><div class="row two"><span class="name">20 visits</span><span class="lead"></span><span class="price">30,000֏</span><span class="price">32,000֏</span></div><div class="row two"><span class="name">30 visits</span><span class="lead"></span><span class="price">35,000֏</span><span class="price">37,000֏</span></div></div>
+<h2>3-month membership</h2><div class="box"><div class="row"><span class="name">8 visits</span><span class="lead"></span><span class="price">46,000֏</span></div><div class="row"><span class="name">10 visits</span><span class="lead"></span><span class="price">56,000֏</span></div><div class="row"><span class="name">12 visits</span><span class="lead"></span><span class="price">65,000֏</span></div><div class="row"><span class="name">20 visits</span><span class="lead"></span><span class="price">85,000֏</span></div><div class="row"><span class="name">30 visits</span><span class="lead"></span><span class="price">100,000֏</span></div></div>
+<h2>6-month membership</h2><div class="box"><div class="row"><span class="name">8 visits</span><span class="lead"></span><span class="price">85,000֏</span></div><div class="row"><span class="name">10 visits</span><span class="lead"></span><span class="price">100,000֏</span></div><div class="row"><span class="name">12 visits</span><span class="lead"></span><span class="price">115,000֏</span></div><div class="row"><span class="name">30 visits</span><span class="lead"></span><span class="price">180,000֏</span></div></div>
+<h2>12-month membership</h2><div class="box"><div class="row"><span class="name">96 visits<small>8/month</small></span><span class="lead"></span><span class="price">153,000֏</span></div><div class="row"><span class="name">120 visits<small>10/month</small></span><span class="lead"></span><span class="price">180,000֏</span></div><div class="row"><span class="name">144 visits<small>12/month</small></span><span class="lead"></span><span class="price">207,000֏</span></div><div class="row"><span class="name">365 visits<small>30/month</small></span><span class="lead"></span><span class="price">270,000֏</span></div></div>
+<h2 class="big">With a coach</h2>
+<h2>12-month membership</h2><div class="box"><div class="row"><span class="name">96 visits<small>8/month</small></span><span class="lead"></span><span class="price">297,000֏</span></div><div class="row"><span class="name">120 visits<small>10/month</small></span><span class="lead"></span><span class="price">348,000֏</span></div><div class="row"><span class="name">144 visits<small>12/month</small></span><span class="lead"></span><span class="price">399,000֏</span></div></div>
+<h2>PT Boxing</h2><div class="box"><div class="row"><span class="name">8 visits</span><span class="lead"></span><span class="price">40,000֏</span></div><div class="row"><span class="name">10 visits</span><span class="lead"></span><span class="price">50,000֏</span></div><div class="row"><span class="name">12 visits</span><span class="lead"></span><span class="price">60,000֏</span></div></div>
+<h2>Personal training 1×1</h2><div class="box"><div class="row"><span class="name">8 visits</span><span class="lead"></span><span class="price">70,000֏</span></div><div class="row"><span class="name">10 visits</span><span class="lead"></span><span class="price">80,000֏</span></div><div class="row"><span class="name">12 visits</span><span class="lead"></span><span class="price">90,000֏</span></div></div>
+</section>
+  <footer>LIMITLESS GYM · NO LIMITS. NO EXCUSES.</footer>
+</main>
+<script>
+(function(){
+  var root=document.documentElement, links=document.querySelectorAll(".langs a");
+  function set(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    for(var i=0;i<links.length;i++) links[i].setAttribute("aria-current", links[i].getAttribute("data-l")===l);
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  for(var i=0;i<links.length;i++) links[i].addEventListener("click",function(e){e.preventDefault();set(this.getAttribute("data-l"));});
+  var l="hy";
+  try{
+    var s=localStorage.getItem("lang"), n=(navigator.language||"");
+    if(s==="hy"||s==="ru"||s==="en") l=s; else if(n.indexOf("ru")===0) l="ru"; else if(n.indexOf("en")===0) l="en";
+  }catch(e){}
+  set(l);
+})();
+</script>
+</body>
+</html>

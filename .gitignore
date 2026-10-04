@@ -1,0 +1,7 @@
+node_modules
+dist
+.sheet
+.DS_Store
+.claude
+*.html.bak
+Limitless Gym*.html
